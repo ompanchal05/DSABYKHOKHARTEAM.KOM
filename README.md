@@ -8,7 +8,7 @@
 
 - 👨‍💻 All of my projects are available at [https://github.com/ompanchal05](https://github.com/ompanchal05)
 
-- 📫 How to reach me **Panchalom136@gmail.com**
+- 📫 How to reach me **panchalom136@gmail.com**
 
 - ⚡ Fun fact **I Think I am Doing Well But Not Really True !**
 
