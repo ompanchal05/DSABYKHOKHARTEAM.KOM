@@ -1,0 +1,22 @@
+ Problem Number: 242. Valid Anagram
+
+ Definition:
+
+Given two strings s and t, return True if t is an anagram of s, otherwise return **False`.
+An anagram means both strings contain the same characters with the same frequency, but possibly in a different order.
+
+How to Solve (5–10 lines explanation):
+
+First, check if the lengths of s and t are equal. If not → return False.
+
+Count the frequency of each character in both strings.
+
+Compare the counts — if they match, return True.
+
+In Python, we can use a dictionary (hashmap) to store counts.
+
+Alternatively, Python provides collections.Counter which makes counting easy.
+
+Sorting is another way: if sorted s == sorted t, they are anagrams.
+
+Best approach is using a hashmap for O(n) time efficiency.
