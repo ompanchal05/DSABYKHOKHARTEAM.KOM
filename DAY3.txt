@@ -1,0 +1,76 @@
+"""
+Problem: Two Sum
+
+Given an array of integers nums and an integer target, return the indices i and j such that:
+    nums[i] + nums[j] == target and i != j
+
+Constraints:
+- 2 <= nums.length <= 1000
+- -10,000,000 <= nums[i] <= 10,000,000
+- -10,000,000 <= target <= 10,000,000
+Exactly one solution exists.
+"""
+
+# -------------------------------
+# Solution 1: Brute Force O(n^2)
+# -------------------------------
+def two_sum_bruteforce(nums, target):
+    n = len(nums)
+    for i in range(n):
+        for j in range(i + 1, n):  # ensure i != j
+            if nums[i] + nums[j] == target:
+                return [i, j]
+    return []
+
+
+# -------------------------------
+# Solution 2: Optimized Hashmap O(n)
+# -------------------------------
+def two_sum(nums, target):
+    seen = {}  # value -> index
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in seen:  # found the pair
+            return [seen[complement], i]
+        seen[num] = i
+    return []
+
+
+# -------------------------------
+# Solution 3: LeetCode Class Style
+# -------------------------------
+from typing import List
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        seen = {}
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in seen:
+                return [seen[complement], i]
+            seen[num] = i
+        return []
+        
+
+# -------------------------------
+# Tests
+# -------------------------------
+if __name__ == "__main__":
+    nums1, target1 = [3, 4, 5, 6], 7
+    nums2, target2 = [4, 5, 6], 10
+    nums3, target3 = [5, 5], 10
+
+    print("Brute force:", two_sum_bruteforce(nums1, target1))  # [0, 1]
+    print("Optimized:", two_sum(nums1, target1))               # [0, 1]
+
+    print("Brute force:", two_sum_bruteforce(nums2, target2))  # [0, 2]
+    print("Optimized:", two_sum(nums2, target2))               # [0, 2]
+
+    print("Brute force:", two_sum_bruteforce(nums3, target3))  # [0, 1]
+    print("Optimized:", two_sum(nums3, target3))               # [0, 1]
+
+    # LeetCode style
+    solver = Solution()
+    print("Class style:", solver.twoSum(nums1, target1))       # [0, 1]
+    print("Class style:", solver.twoSum(nums2, target2))       # [0, 2]
+    print("Class style:", solver.twoSum(nums3, target3))       # [0, 1]
