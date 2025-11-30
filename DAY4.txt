@@ -1,0 +1,32 @@
+Day 4 – Group Anagrams (DSA with Python)
+
+Problem:
+Given an array of strings strs, group all anagrams together into sublists. 
+Return the groups in any order.
+
+Definition:
+Two strings are anagrams if they contain the same characters, regardless of order.
+
+Example:
+Input: ["act","pots","tops","cat","stop","hat"]
+Output: [["hat"],["act","cat"],["stop","pots","tops"]]
+
+Approach:
+Use a dictionary where:
+- Key  = sorted version of the string (same for all anagrams)
+- Value = list of anagrams with that signature
+
+Algorithm:
+1. Create an empty dictionary anagram_map.
+2. Loop through each string.
+3. Sort the characters to form a key.
+4. Append string to that key’s list.
+5. Return all values of dictionary.
+
+Time Complexity:
+O(n * k log k)
+n = number of strings
+k = average length of each string
+
+Space Complexity:
+O(n * k) for storing grouped anagrams
