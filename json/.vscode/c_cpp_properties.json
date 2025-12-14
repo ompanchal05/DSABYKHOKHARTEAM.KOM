@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "name": "C",
+      "compilerPath": "gcc",
+      "cStandard": "c11",
+      "intelliSenseMode": "gcc-x64",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ]
+    }
+  ],
+  "version": 4
+}
